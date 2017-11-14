@@ -1,0 +1,55 @@
+
+<ion-view title="作品集" hide-back-button="true" id="production">
+    <ion-nav-buttons side="left" >
+        <button class="button button-icon ion-ios-more" ng-click="toggleLeft()"></button>
+    </ion-nav-buttons>
+
+    <ion-nav-title>
+        <div class="title">
+            <a href="" ng-click="subheadOn()">作品集 <i class="icon ion-ios-arrow-down"></i> </a>
+        </div>
+    </ion-nav-title>
+
+    <div class="subhead" id="subhead_production">
+        <div class="inner">
+            <div class="inner_inner">
+                <div class="row" ng-click="subheadOn()">
+                    <div class="col" ui-sref="tabs.home">
+                        <i class="icon ion-ios-pricetags-outline"></i>
+                        <p>专题</p>
+                    </div>
+                    <div class="col"  ui-sref="tabs.designer">
+                        <i class="icon ion-social-github-outline"></i>
+                        <p>设计师</p>
+                    </div>
+                    <div class="col" ui-sref="tabs.production" >
+                        <i class="icon ion-ios-paper-outline"></i>
+                        <p>作品集</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <ion-content>
+        <div class="list card">
+		  <div class="inner" ng-repeat="item in data">
+              <div><img ng-src="{{item.image}}"> </div>
+              <div class="photo">
+                  <img ng-src="{{item.photo}}">
+                  <h3>{{item.name}}</h3>
+                  <p>{{item.hobby}} </p>
+              </div>
+              <h2><span>【{{item.type}}】</span>{{item.title}}</h2>
+              <h5>{{item.text}}</h5>
+              <div class="ion">
+                  <i class="icon  ion-android-favorite-outline"> {{item.fans}}</i>
+                  <i class="icon  ion-android-star-outline"> {{item.praise}}</i>
+              </div>
+		  </div>
+		</div>
+
+
+    </ion-content>
+</ion-view>

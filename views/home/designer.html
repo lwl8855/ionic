@@ -1,0 +1,58 @@
+<ion-view title="设计师" hide-back-button="true" id="designer">
+    <ion-nav-buttons side="left" >
+        <button class="button button-icon ion-ios-more" ng-click="toggleLeft()"></button>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        <div class="title">
+            <a href="" ng-click="subheadOn()">设计师 <i class="icon ion-ios-arrow-down"></i> </a>
+        </div>
+    </ion-nav-title>
+    <div class="subhead" id="subhead_designer">
+        <div class="inner">
+            <div class="inner_inner">
+                <div class="row" ng-click="subheadOn()">
+                    <div class="col" ui-sref="tabs.home">
+                        <i class="icon ion-ios-pricetags-outline"></i>
+                        <p>专题</p>
+                    </div>
+                    <div class="col"  ui-sref="tabs.designer">
+                        <i class="icon ion-social-github-outline"></i>
+                        <p>设计师</p>
+                    </div>
+                    <div class="col" ui-sref="tabs.production" >
+                        <i class="icon ion-ios-paper-outline"></i>
+                        <p>作品</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <ion-content>
+        <ion-scroll direction="x" style="overflow: hidden">
+            <div class="row designer_row">
+                <div class="col" ng-repeat="item in data" ng-click="changePerson($index)" ng-class="item.checked? 'active':''">
+                    <a href="">
+                        <img ng-src="{{item.head}}"/>
+                        <p>{{item.name}}</p>
+                    </a>
+                </div>
+            </div>
+        </ion-scroll>
+        <div class="pic">
+            <div class="big-pic"><img ng-src="{{person.pic}}"></div>
+            <div class="text">
+                <p>{{person.text}}</p>
+            </div>
+            <div class="title">
+                <div><img  ng-src="{{person.head}}"></div>
+                <a href="">查看作品</a>
+                <h2>{{person.name}}</h2>
+                <p><i class="icon ion-android-favorite-outline"></i>粉丝<span> {{person.attention}}</span></p>
+
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
